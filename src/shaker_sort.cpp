@@ -10,7 +10,7 @@
 
 using namespace std;
 
-void print_araray(int *array, int size) {
+void print_array(int array[], int size) {
 
 	cout << "[";
 
@@ -21,23 +21,31 @@ void print_araray(int *array, int size) {
 	cout << "]";
 }
 
+void print_pass(int pass, int array[], unsigned int size){
+	cout << "Pass " << to_string(pass);
+
+	print_array(array, size);
+
+	cout << endl << endl;
+}
+
 void swap(int &x, int &y) {
 	int temp = x;
 	x = y;
 	y = temp;
 }
 
-void shaker_sort(int *arr, const unsigned int size) {
+void shaker_sort(int arr[], const unsigned int size) {
 
-	unsigned int left_direction_count = 0;
-	unsigned int right_direction_count = 0;
+	unsigned int left_direction_index = 0;
+	unsigned int right_direction_index = 0;
 
 	for (unsigned int i = 0; i < size - 1; i++) {
 
 		if (i % 2 == 0) {
 
-			for (unsigned int j = left_direction_count;
-					j < size - right_direction_count - 1; j++) {
+			for (unsigned int j = left_direction_index;
+					j < size - 1 - right_direction_index; j++) {
 
 				if (arr[j] > arr[j + 1]) {
 
@@ -45,12 +53,12 @@ void shaker_sort(int *arr, const unsigned int size) {
 				}
 			}
 
-			left_direction_count++;
+			left_direction_index++;
 
 		} else {
 
-			for (unsigned int j = size - 1 - right_direction_count;
-					j > left_direction_count - 1; j--) {
+			for (unsigned int j = size - 1 - right_direction_index;
+					j > left_direction_index - 1; j--) {
 
 				if (arr[j - 1] > arr[j]) {
 
@@ -59,13 +67,9 @@ void shaker_sort(int *arr, const unsigned int size) {
 
 			}
 
-			right_direction_count++;
+			right_direction_index++;
 		}
 
-		cout << "Pass " << to_string(i);
-
-		print_araray(arr, size);
-
-		cout << endl << endl;
+		// print_pass(i, arr, size);
 	}
 }

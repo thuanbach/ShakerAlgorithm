@@ -12,25 +12,25 @@
 
 #include <algorithm>
 #include <chrono>
-
+#include "shaker_sort.h"
 
 using namespace std;
 using std::chrono::high_resolution_clock;
 using std::chrono::duration_cast;
 using std::chrono::milliseconds;
+using std::chrono::nanoseconds;
+using std::chrono::time_point;
 
 /**
  * Declare a thousand separator
  */
 const string THOUDSAND_SEPARATOR = ",";
 
+int* initiate(unsigned int size) {
+	int *arr = new int[size];
 
-int* initiate(const unsigned int size) {
-	int* arr = new int[size];
-
-
-	for (unsigned int i=0; i< size; i++){
-		arr[i] = 1000%i;
+	for (unsigned int i = 0; i < size; i++) {
+		arr[i] = rand() % 1000;
 	}
 
 	return arr;
@@ -40,17 +40,14 @@ int measure_shaker_sort(int arr[], unsigned int size) {
 
 	auto t1 = chrono::high_resolution_clock::now();
 
-	sort(arr, arr + size);
+	shaker_sort(arr, size);
 
 	auto t2 = chrono::high_resolution_clock::now();
 
-	auto ms_int = duration_cast<milliseconds>(t2 - t1);
+	nanoseconds ms_int = duration_cast<nanoseconds>(t2 - t1); // @suppress("Invalid arguments")
 
-	//return ms_int.count();
-
-	return 1;
+	return ms_int.count();
 }
-
 
 /**
  * Format a number with a thousand separator
@@ -72,92 +69,76 @@ string format_number(unsigned int n) {
 	return s;
 }
 
-
-void print_exectution_time_to_console(int acending_time, int descending_time, unsigned int array_size){
+void print_exectution_time_to_console(unsigned int ascending_time,
+		unsigned int descending_time, unsigned int array_size) {
 	const char PLUS_CHARACTER = '+';
-		const char TABLE_HORIZONTAL_BORDER_CHARACTER = '-';
 
-		const char TABLE_VERTICAL_BORDER_CHARACTER = '|';
+	const char TABLE_HORIZONTAL_BORDER_CHARACTER = '-';
 
-		const unsigned int ARRAY_HEADER_WIDTH = 10;
-		const unsigned int ARRAY_HEADER_PADDING = 2;
+	const char TABLE_VERTICAL_BORDER_CHARACTER = '|';
 
-		const string COLUMN_HEADER = "Array";
+	const char BLANK_CHARACTER = ' ';
 
-		const char BLANK_CHARACTER = ' ';
+	const unsigned int FIRST_COLUMN_WIDTH = 20;
 
-		const unsigned int FIRST_COLUMN_WIDTH = 20;
+	const unsigned int SECOND_COLUMN_WIDTH = 20;
 
-		const unsigned int SECOND_COLUMN_WIDTH = 20;
+	const unsigned int TOTAL_TABLE_WIDTH = FIRST_COLUMN_WIDTH
+			+ SECOND_COLUMN_WIDTH + 1;
 
-		const unsigned int COLUMN_WIDTH_PER_ARRAY = 11;
+	// Print a line to indicate size of arrays
+	cout << endl;
+	cout << "n=" << format_number(array_size) << endl;
 
-		const unsigned int TOTAL_TABLE_WIDTH = FIRST_COLUMN_WIDTH + SECOND_COLUMN_WIDTH;
+	// Close table header with a border
+	cout << PLUS_CHARACTER << setfill(TABLE_HORIZONTAL_BORDER_CHARACTER)
+			<< setw(TOTAL_TABLE_WIDTH) << TABLE_HORIZONTAL_BORDER_CHARACTER
+			<< PLUS_CHARACTER << setfill(BLANK_CHARACTER) << endl;
 
-		// Print a line to indicate size of arrays
-		//	cout << "n=" << format_number(n) << endl;
+	cout << TABLE_VERTICAL_BORDER_CHARACTER << setw(FIRST_COLUMN_WIDTH) << left
+			<< "Ascending time (ns)" << TABLE_VERTICAL_BORDER_CHARACTER << right
+			<< setw(SECOND_COLUMN_WIDTH) << ascending_time
+			<< TABLE_VERTICAL_BORDER_CHARACTER << endl;
 
-		// Print table header border
-		cout << PLUS_CHARACTER << setfill(TABLE_HORIZONTAL_BORDER_CHARACTER)
-				<< setw(TOTAL_TABLE_WIDTH) << TABLE_HORIZONTAL_BORDER_CHARACTER
-				<< PLUS_CHARACTER << setfill(BLANK_CHARACTER) << endl;
+	cout << TABLE_VERTICAL_BORDER_CHARACTER << setw(FIRST_COLUMN_WIDTH) << left
+			<< "Descending time (ns)" << TABLE_VERTICAL_BORDER_CHARACTER
+			<< right << setw(SECOND_COLUMN_WIDTH) << descending_time
+			<< TABLE_VERTICAL_BORDER_CHARACTER << endl;
 
-		// Print row header
-		cout << TABLE_VERTICAL_BORDER_CHARACTER << setw(FIRST_COLUMN_WIDTH)
-				<< BLANK_CHARACTER << setw(SECOND_COLUMN_WIDTH) << TABLE_VERTICAL_BORDER_CHARACTER << endl;
+	// Close the table with a border
+	cout << PLUS_CHARACTER << setfill(TABLE_HORIZONTAL_BORDER_CHARACTER)
+			<< setw(TOTAL_TABLE_WIDTH) << TABLE_HORIZONTAL_BORDER_CHARACTER
+			<< PLUS_CHARACTER << setfill(BLANK_CHARACTER) << endl;
 
-		// Close table header with a border
-		cout << PLUS_CHARACTER << setfill(TABLE_HORIZONTAL_BORDER_CHARACTER)
-				<< setw(TOTAL_TABLE_WIDTH) << TABLE_HORIZONTAL_BORDER_CHARACTER
-				<< PLUS_CHARACTER << setfill(BLANK_CHARACTER) << endl;
-
-		cout << TABLE_VERTICAL_BORDER_CHARACTER << setw(FIRST_COLUMN_WIDTH)
-							<< left;
-
-		cout << "Random time (ms)";
-		// Print execution time for each array ordering.
-//		for (unsigned int i = 0; i < NUMBER_OF_ARRAY_ORDERING; i++) {
-//			cout << TABLE_VERTICAL_BORDER_CHARACTER << setw(FIRST_COLUMN_WIDTH)
-//					<< left;
-//
-//			if (i == 0) {
-//				cout << "Random time (ms)";
-//			} else if (i == 1) {
-//				cout << "Ordered time (ms)";
-//			} else {
-//				cout << "Reverse time (ms)";
-//			}
-//
-//			for (unsigned int k = 0; k < NUMBER_OF_ARRAYS_PER_SIZE; k++) {
-//				cout << TABLE_VERTICAL_BORDER_CHARACTER << right
-//						<< setw(ARRAY_HEADER_WIDTH) << execution_time[i][k];
-//			}
-//			cout << TABLE_VERTICAL_BORDER_CHARACTER << endl;
-//		}
-
-		// Close the table with a border
-		cout << PLUS_CHARACTER << setfill(TABLE_HORIZONTAL_BORDER_CHARACTER)
-				<< setw(TOTAL_TABLE_WIDTH) << TABLE_HORIZONTAL_BORDER_CHARACTER
-				<< PLUS_CHARACTER << setfill(BLANK_CHARACTER) << endl;
+	cout << endl;
 }
 
 void measure_shaker_sort_efficiency() {
-	unsigned int size;
 
-	cout << "Input size of the array (0 to exit) >";
-	cin >> size;
+	cout << "Start Shaker Sort's Measurement Application" << endl;
+	while (true) {
+		unsigned int size = 19;
 
-	int* array = initiate(size);
+		cout << "Input size of the array (0 to exit) >";
+		cin >> size;
 
+		if (size == 0) {
+			cout << "Application shutdown";
+			break;
+		}
 
-	sort(array, array + size);
+		int *array = initiate(size);
 
-	unsigned int acending_time = measure_shaker_sort(array, size);
+		//sort the array
+		sort(array, array + size);
 
+		unsigned int ascending_time = measure_shaker_sort(array, size);
 
-	// reverse the array
-	reverse(array, array + size);
+		// reverse the array
+		reverse(array, array + size);
 
-	unsigned int descending_time = measure_shaker_sort(array, size);
+		unsigned int descending_time = measure_shaker_sort(array, size);
 
+		print_exectution_time_to_console(ascending_time, descending_time, size);
+	}
 }

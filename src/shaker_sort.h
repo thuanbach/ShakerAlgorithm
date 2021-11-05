@@ -9,7 +9,7 @@
 #define SRC_SHAKER_SORT_H_
 
 
-void shaker_sort(int* arr, const unsigned int size);
+void shaker_sort(int arr[], const unsigned int size);
 
 
 #endif /* SRC_SHAKER_SORT_H_ */
