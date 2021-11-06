@@ -1,8 +1,10 @@
-/*
- * shaker_sort.cpp
+/**
+ * Implement the Shaker sort.
  *
- *  Created on: Nov 3, 2021
- *      Author: thuanbachvan
+ * @file	shaker_sort.cpp
+ * @author	Thuan Bach
+ * @date	November 3, 2021
+ *
  */
 
 #include <iostream>
@@ -10,6 +12,14 @@
 
 using namespace std;
 
+/**
+ * Print the array to the console.
+ * It supports for testing.
+ *
+ * @param	array	The array needs to be printed out.
+ * @param	size	The size of the array.
+ * @return	N/A
+ */
 void print_array(int array[], int size) {
 
 	cout << "[";
@@ -21,6 +31,16 @@ void print_array(int array[], int size) {
 	cout << "]";
 }
 
+/**
+ * Print values of the array to console at the pass index of the sort.
+ * It supports for testing.
+ *
+ * @param	pass	The pass index of the sort.
+ * @param	array	The array needs to be print out.
+ * @param	size	The size of the array.
+ * @return	N/A
+ *
+ */
 void print_pass(int pass, int array[], unsigned int size){
 	cout << "Pass " << to_string(pass);
 
@@ -29,12 +49,27 @@ void print_pass(int pass, int array[], unsigned int size){
 	cout << endl << endl;
 }
 
+/**
+ * Swap the value of x and y together.
+ *
+ * @param x	The first value to be swapped.
+ * @param y The second value to be swapped.
+ * @return N/A
+ */
 void swap(int &x, int &y) {
 	int temp = x;
 	x = y;
 	y = temp;
 }
 
+/**
+ * <p> Implement the Shaker sort that is a modified of the bubble sort. </p>
+ * <p> Instead of shift biggest items to to the end of the array for each loop, it shifts the biggest item to end for the first pass.</p>
+ * <p> And for the second pass, it shifts the smallest item to the start of the array. And repeats the process with both directions until the array is sorted</p>
+ * @param arr[]	The array needs to be sorted.
+ * @param size	The size of the array.
+ * @return	N/A
+ */
 void shaker_sort(int arr[], const unsigned int size) {
 
 	unsigned int left_direction_index = 0;
@@ -69,7 +104,7 @@ void shaker_sort(int arr[], const unsigned int size) {
 
 			right_direction_index++;
 		}
-
+		// Support for testing purpose. Remove the comment to trace the array for each pass
 		// print_pass(i, arr, size);
 	}
 }

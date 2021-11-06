@@ -1,14 +1,23 @@
-/*
- * sharker_sort_measurement.h
+/**
+ * This module is used to support user interaction in selecting sizes of arrays to measure the Shaker sorts' efficiency.
  *
- *  Created on: Nov 4, 2021
- *      Author: thuanbachvan
+ * @file	shaker_sort_measurement.h
+ * @author	Thuan Bach
+ * @date	November 3, 2021
  */
-
 #ifndef SRC_SHAKER_SORT_MEASUREMENT_H_
 #define SRC_SHAKER_SORT_MEASUREMENT_H_
 
 
+/**
+ *
+ * <p> Prompt users for the array size, then initiate array data, finally measure the Shaker sort's execution time and print result to the console.</p>
+ * <p> It will continues the above process until users choose the option that exits the application.</p>
+ *
+ * @param	N/A
+ * @return	N/A
+ *
+ */
 void measure_shaker_sort_efficiency();
 
 

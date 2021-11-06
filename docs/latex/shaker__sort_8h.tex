@@ -1,0 +1,43 @@
+\hypertarget{shaker__sort_8h}{}\doxysection{src/shaker\+\_\+sort.h File Reference}
+\label{shaker__sort_8h}\index{src/shaker\_sort.h@{src/shaker\_sort.h}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{shaker__sort_8h_ad105af1747ba5b0b84768c81c9014d75}{shaker\+\_\+sort}} (int arr\mbox{[}$\,$\mbox{]}, const unsigned int size)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implement the Shaker sort.
+
+\begin{DoxyAuthor}{Author}
+Thuan Bach 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+November 3, 2021 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{shaker__sort_8h_ad105af1747ba5b0b84768c81c9014d75}\label{shaker__sort_8h_ad105af1747ba5b0b84768c81c9014d75}} 
+\index{shaker\_sort.h@{shaker\_sort.h}!shaker\_sort@{shaker\_sort}}
+\index{shaker\_sort@{shaker\_sort}!shaker\_sort.h@{shaker\_sort.h}}
+\doxysubsubsection{\texorpdfstring{shaker\_sort()}{shaker\_sort()}}
+{\footnotesize\ttfamily void shaker\+\_\+sort (\begin{DoxyParamCaption}\item[{int}]{arr\mbox{[}$\,$\mbox{]},  }\item[{const unsigned int}]{size }\end{DoxyParamCaption})}
+
+Implement the Shaker sort that is a modified of the bubble sort. 
+
+Instead of shift biggest items to to the end of the array for each loop, it shifts the biggest item to end for the first pass.
+
+And for the second pass, it shifts the smallest item to the start of the array. And repeats the process with both directions until the array is sorted
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr\mbox{[}$\,$\mbox{]}} & The array needs to be sorted. \\
+\hline
+{\em size} & The size of the array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N/A 
+\end{DoxyReturn}

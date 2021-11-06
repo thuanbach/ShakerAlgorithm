@@ -1,0 +1,107 @@
+\hypertarget{shaker__sort_8cpp}{}\doxysection{src/shaker\+\_\+sort.cpp File Reference}
+\label{shaker__sort_8cpp}\index{src/shaker\_sort.cpp@{src/shaker\_sort.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{shaker__sort_8cpp_ac0477ab85f8a3ca3ccf5a32d20d6f64e}{print\+\_\+array}} (int array\mbox{[}$\,$\mbox{]}, int size)
+\item 
+void \mbox{\hyperlink{shaker__sort_8cpp_a84863bb7a22b3bb440d1f3579ad026e2}{print\+\_\+pass}} (int pass, int array\mbox{[}$\,$\mbox{]}, unsigned int size)
+\item 
+void \mbox{\hyperlink{shaker__sort_8cpp_aa23258ab9773977c9cb5176081178d62}{swap}} (int \&x, int \&y)
+\item 
+void \mbox{\hyperlink{shaker__sort_8cpp_ad105af1747ba5b0b84768c81c9014d75}{shaker\+\_\+sort}} (int arr\mbox{[}$\,$\mbox{]}, const unsigned int size)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implement the Shaker sort.
+
+\begin{DoxyAuthor}{Author}
+Thuan Bach 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+November 3, 2021 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{shaker__sort_8cpp_ac0477ab85f8a3ca3ccf5a32d20d6f64e}\label{shaker__sort_8cpp_ac0477ab85f8a3ca3ccf5a32d20d6f64e}} 
+\index{shaker\_sort.cpp@{shaker\_sort.cpp}!print\_array@{print\_array}}
+\index{print\_array@{print\_array}!shaker\_sort.cpp@{shaker\_sort.cpp}}
+\doxysubsubsection{\texorpdfstring{print\_array()}{print\_array()}}
+{\footnotesize\ttfamily void print\+\_\+array (\begin{DoxyParamCaption}\item[{int}]{array\mbox{[}$\,$\mbox{]},  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+Print the array to the console. It supports for testing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & The array needs to be printed out. \\
+\hline
+{\em size} & The size of the array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N/A 
+\end{DoxyReturn}
+\mbox{\Hypertarget{shaker__sort_8cpp_a84863bb7a22b3bb440d1f3579ad026e2}\label{shaker__sort_8cpp_a84863bb7a22b3bb440d1f3579ad026e2}} 
+\index{shaker\_sort.cpp@{shaker\_sort.cpp}!print\_pass@{print\_pass}}
+\index{print\_pass@{print\_pass}!shaker\_sort.cpp@{shaker\_sort.cpp}}
+\doxysubsubsection{\texorpdfstring{print\_pass()}{print\_pass()}}
+{\footnotesize\ttfamily void print\+\_\+pass (\begin{DoxyParamCaption}\item[{int}]{pass,  }\item[{int}]{array\mbox{[}$\,$\mbox{]},  }\item[{unsigned int}]{size }\end{DoxyParamCaption})}
+
+Print values of the array to console at the pass index of the sort. It supports for testing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pass} & The pass index of the sort. \\
+\hline
+{\em array} & The array needs to be print out. \\
+\hline
+{\em size} & The size of the array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N/A 
+\end{DoxyReturn}
+\mbox{\Hypertarget{shaker__sort_8cpp_ad105af1747ba5b0b84768c81c9014d75}\label{shaker__sort_8cpp_ad105af1747ba5b0b84768c81c9014d75}} 
+\index{shaker\_sort.cpp@{shaker\_sort.cpp}!shaker\_sort@{shaker\_sort}}
+\index{shaker\_sort@{shaker\_sort}!shaker\_sort.cpp@{shaker\_sort.cpp}}
+\doxysubsubsection{\texorpdfstring{shaker\_sort()}{shaker\_sort()}}
+{\footnotesize\ttfamily void shaker\+\_\+sort (\begin{DoxyParamCaption}\item[{int}]{arr\mbox{[}$\,$\mbox{]},  }\item[{const unsigned int}]{size }\end{DoxyParamCaption})}
+
+Implement the Shaker sort that is a modified of the bubble sort. 
+
+Instead of shift biggest items to to the end of the array for each loop, it shifts the biggest item to end for the first pass.
+
+And for the second pass, it shifts the smallest item to the start of the array. And repeats the process with both directions until the array is sorted
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr\mbox{[}$\,$\mbox{]}} & The array needs to be sorted. \\
+\hline
+{\em size} & The size of the array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N/A 
+\end{DoxyReturn}
+\mbox{\Hypertarget{shaker__sort_8cpp_aa23258ab9773977c9cb5176081178d62}\label{shaker__sort_8cpp_aa23258ab9773977c9cb5176081178d62}} 
+\index{shaker\_sort.cpp@{shaker\_sort.cpp}!swap@{swap}}
+\index{swap@{swap}!shaker\_sort.cpp@{shaker\_sort.cpp}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily void swap (\begin{DoxyParamCaption}\item[{int \&}]{x,  }\item[{int \&}]{y }\end{DoxyParamCaption})}
+
+Swap the value of x and y together.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The first value to be swapped. \\
+\hline
+{\em y} & The second value to be swapped. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N/A 
+\end{DoxyReturn}

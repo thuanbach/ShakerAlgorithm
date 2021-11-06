@@ -1,17 +1,19 @@
-/*
- * main.cpp
+/**
+ * This file contains the main function where the main application gets started.
  *
- *  Created on: Nov 3, 2021
- *      Author: thuanbachvan
+ * @file main.cpp
+ * @author Thuan Bach
+ * @date	November 3, 2021
  */
-
 
 #include <iostream>
 #include "shaker_sort_measurement.h"
 
-using namespace std;
-
-
+/**
+ * The main function where the Shaker Sort Measurement starts execution.
+ * @param	N/A
+ * @return 	Always 0 if the application terminated correctly.
+ */
 int main(){
 
 	measure_shaker_sort_efficiency();
