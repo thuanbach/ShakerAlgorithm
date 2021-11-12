@@ -13,6 +13,11 @@
 using namespace std;
 
 /**
+ * Declare a debug mode to test each pass of the shaker sort.
+ */
+const bool DEBUG = false;
+
+/**
  * Print the array to the console.
  * It supports for testing.
  *
@@ -25,7 +30,11 @@ void print_array(int array[], int size) {
 	cout << "[";
 
 	for (int i = 0; i < size; i++) {
-		cout << array[i] << ",";
+		cout << array[i];
+
+		if (i < size - 1) {
+			cout << ",";
+		}
 	}
 
 	cout << "]";
@@ -41,7 +50,7 @@ void print_array(int array[], int size) {
  * @return	N/A
  *
  */
-void print_pass(int pass, int array[], unsigned int size){
+void print_pass(int pass, int array[], unsigned int size) {
 	cout << "Pass " << to_string(pass);
 
 	print_array(array, size);
@@ -65,17 +74,23 @@ void swap(int &x, int &y) {
 /**
  * <p> Implement the Shaker sort that is a modified of the bubble sort. </p>
  * <p> Instead of shift biggest items to to the end of the array for each loop, it shifts the biggest item to end for the first pass.</p>
- * <p> And for the second pass, it shifts the smallest item to the start of the array. And repeats the process with both directions until the array is sorted</p>
+ * <p> And for the second pass, it shifts the smallest item to the start of the array.</p>
+ * <p> And repeats the process with both directions until the array is sorted.</p>
+ *
  * @param arr[]	The array needs to be sorted.
  * @param size	The size of the array.
  * @return	N/A
  */
 void shaker_sort(int arr[], const unsigned int size) {
+	if (size < 1) {
+		return;
+	}
 
 	unsigned int left_direction_index = 0;
 	unsigned int right_direction_index = 0;
 
 	for (unsigned int i = 0; i < size - 1; i++) {
+		bool exchanged = false;
 
 		if (i % 2 == 0) {
 
@@ -83,7 +98,7 @@ void shaker_sort(int arr[], const unsigned int size) {
 					j < size - 1 - right_direction_index; j++) {
 
 				if (arr[j] > arr[j + 1]) {
-
+					exchanged = true;
 					swap(arr[j], arr[j + 1]);
 				}
 			}
@@ -96,15 +111,22 @@ void shaker_sort(int arr[], const unsigned int size) {
 					j > left_direction_index - 1; j--) {
 
 				if (arr[j - 1] > arr[j]) {
-
+					exchanged = true;
 					swap(arr[j - 1], arr[j]);
 				}
-
 			}
 
 			right_direction_index++;
 		}
-		// Support for testing purpose. Remove the comment to trace the array for each pass
-		// print_pass(i, arr, size);
+
+		// Support for testing purpose.
+		if (DEBUG) {
+			print_pass(i, arr, size);
+		}
+
+		if (!exchanged) {
+			// the array is already sorted
+			break;
+		}
 	}
 }

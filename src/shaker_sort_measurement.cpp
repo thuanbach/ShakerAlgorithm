@@ -25,6 +25,11 @@ using std::chrono::nanoseconds;
 using std::chrono::time_point;
 
 /**
+ * Declare the stream size limit
+ */
+const long STREAM_SIZE_LIMIT = std::numeric_limits<std::streamsize>::max();
+
+/**
  * Declare a thousand separator
  */
 const string THOUDSAND_SEPARATOR = ",";
@@ -35,7 +40,7 @@ const string THOUDSAND_SEPARATOR = ",";
  * @return	The array with the size provided and items of value initiated by the rand() method from algorithm library.
  */
 
-int* initiate(unsigned int size) {
+int* initiate(const unsigned int size) {
 	int *arr = new int[size];
 
 	for (unsigned int i = 0; i < size; i++) {
@@ -52,7 +57,7 @@ int* initiate(unsigned int size) {
  * @param	size	The size of the array.
  * @return	The shaker sort's execution time in nanosecond.
  */
-int measure_shaker_sort(int arr[], unsigned int size) {
+int measure_shaker_sort(int arr[], const unsigned int size) {
 
 	auto t1 = chrono::high_resolution_clock::now();
 
@@ -136,8 +141,40 @@ void print_exectution_time_to_console(unsigned int ascending_time,
 }
 
 /**
+ * Parse users' input from the Console, and check the data before return it as a integer value.
  *
- * <p> Prompt users for the array size, then initiate array data, finally measure the Shaker sort's execution time and print result to the console.</p>
+ * @param  N/A
+ * @return An integer that the user inputs
+ */
+
+int get_user_input_as_number() {
+	int number;
+
+	while (true) {
+
+		cin >> number;
+
+		if (cin.fail() || number < 0) {
+			cin.clear();
+			cin.ignore(STREAM_SIZE_LIMIT, '\n');
+			cout << "ERROR: Incorrect number. Please input again." << endl;
+			cout << ">";
+			continue;
+		}
+
+		// ignore character return for the next input
+		cin.ignore(STREAM_SIZE_LIMIT, '\n');
+
+		break;
+	}
+
+	return number;
+}
+
+/**
+ *
+ * <p> Prompt users for inputing the array size, then initiate array data. </p>
+ * <p> Finally measure the Shaker sort's execution time and print result to the console.</p>
  * <p> It will continues the above process until users choose the option that exits the application.</p>
  *
  * @param	N/A
@@ -148,10 +185,10 @@ void measure_shaker_sort_efficiency() {
 
 	cout << "Start Shaker Sort's Measurement Application" << endl;
 	while (true) {
-		unsigned int size = 19;
+		unsigned int size = 0;
 
 		cout << "Input size of the array (0 to exit) >";
-		cin >> size;
+		size = get_user_input_as_number();
 
 		if (size == 0) {
 			cout << "Application shutdown";

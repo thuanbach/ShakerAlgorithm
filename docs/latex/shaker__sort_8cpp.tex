@@ -13,6 +13,11 @@ void \mbox{\hyperlink{shaker__sort_8cpp_aa23258ab9773977c9cb5176081178d62}{swap}
 \item 
 void \mbox{\hyperlink{shaker__sort_8cpp_ad105af1747ba5b0b84768c81c9014d75}{shaker\+\_\+sort}} (int arr\mbox{[}$\,$\mbox{]}, const unsigned int size)
 \end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const bool \mbox{\hyperlink{shaker__sort_8cpp_a9c4ab189c2f018bc7ccc8ba4f6e04b9d}{DEBUG}} = false
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -75,7 +80,9 @@ Implement the Shaker sort that is a modified of the bubble sort.
 
 Instead of shift biggest items to to the end of the array for each loop, it shifts the biggest item to end for the first pass.
 
-And for the second pass, it shifts the smallest item to the start of the array. And repeats the process with both directions until the array is sorted
+And for the second pass, it shifts the smallest item to the start of the array.
+
+And repeats the process with both directions until the array is sorted.
 
 
 \begin{DoxyParams}{Parameters}
@@ -105,3 +112,13 @@ Swap the value of x and y together.
 \begin{DoxyReturn}{Returns}
 N/A 
 \end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{shaker__sort_8cpp_a9c4ab189c2f018bc7ccc8ba4f6e04b9d}\label{shaker__sort_8cpp_a9c4ab189c2f018bc7ccc8ba4f6e04b9d}} 
+\index{shaker\_sort.cpp@{shaker\_sort.cpp}!DEBUG@{DEBUG}}
+\index{DEBUG@{DEBUG}!shaker\_sort.cpp@{shaker\_sort.cpp}}
+\doxysubsubsection{\texorpdfstring{DEBUG}{DEBUG}}
+{\footnotesize\ttfamily const bool DEBUG = false}
+
+Declare a debug mode to test each pass of the shaker sort. 

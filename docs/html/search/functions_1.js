@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['initiate_0',['initiate',['../shaker__sort__measurement_8cpp.html#ab1a72cf322831e5a428b09c43fa3014d',1,'shaker_sort_measurement.cpp']]]
+  ['get_5fuser_5finput_5fas_5fnumber_0',['get_user_input_as_number',['../shaker__sort__measurement_8cpp.html#a4b5f5b22cb15c682cd27ff4d53cd7da1',1,'shaker_sort_measurement.cpp']]]
 ];

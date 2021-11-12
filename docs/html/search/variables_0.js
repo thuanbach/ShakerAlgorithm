@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['thoudsand_5fseparator_0',['THOUDSAND_SEPARATOR',['../shaker__sort__measurement_8cpp.html#ac929e1d13c2bbb62d3a18709a4e2b75c',1,'shaker_sort_measurement.cpp']]]
+  ['app_5fmode_0',['APP_MODE',['../main_8cpp.html#a8f8562575e74f221d1a54ad38763d72b',1,'main.cpp']]]
 ];

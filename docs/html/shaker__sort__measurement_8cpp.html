@@ -81,19 +81,23 @@ $(function() {
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab1a72cf322831e5a428b09c43fa3014d"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="shaker__sort__measurement_8cpp.html#ab1a72cf322831e5a428b09c43fa3014d">initiate</a> (unsigned int size)</td></tr>
-<tr class="separator:ab1a72cf322831e5a428b09c43fa3014d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72c5b3abbf62c4dd68c2fec01fe73a61"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="shaker__sort__measurement_8cpp.html#a72c5b3abbf62c4dd68c2fec01fe73a61">measure_shaker_sort</a> (int arr[], unsigned int size)</td></tr>
-<tr class="separator:a72c5b3abbf62c4dd68c2fec01fe73a61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acec1eb591535e7c1fe5006331a74cf45"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="shaker__sort__measurement_8cpp.html#acec1eb591535e7c1fe5006331a74cf45">initiate</a> (const unsigned int size)</td></tr>
+<tr class="separator:acec1eb591535e7c1fe5006331a74cf45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1091e34d7f1d6b8d3a99c408e6bc0e1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="shaker__sort__measurement_8cpp.html#ad1091e34d7f1d6b8d3a99c408e6bc0e1">measure_shaker_sort</a> (int arr[], const unsigned int size)</td></tr>
+<tr class="separator:ad1091e34d7f1d6b8d3a99c408e6bc0e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90d650cb733255585c7bda6cbb577641"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="shaker__sort__measurement_8cpp.html#a90d650cb733255585c7bda6cbb577641">format_number</a> (unsigned int n)</td></tr>
 <tr class="separator:a90d650cb733255585c7bda6cbb577641"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a596e823ee789329a38e6f6d61accf5a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="shaker__sort__measurement_8cpp.html#a596e823ee789329a38e6f6d61accf5a2">print_exectution_time_to_console</a> (unsigned int ascending_time, unsigned int descending_time, unsigned int array_size)</td></tr>
 <tr class="separator:a596e823ee789329a38e6f6d61accf5a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b5f5b22cb15c682cd27ff4d53cd7da1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="shaker__sort__measurement_8cpp.html#a4b5f5b22cb15c682cd27ff4d53cd7da1">get_user_input_as_number</a> ()</td></tr>
+<tr class="separator:a4b5f5b22cb15c682cd27ff4d53cd7da1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a751fdffec74252a78dd20b76325eda09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="shaker__sort__measurement_8cpp.html#a751fdffec74252a78dd20b76325eda09">measure_shaker_sort_efficiency</a> ()</td></tr>
 <tr class="separator:a751fdffec74252a78dd20b76325eda09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:aaa2ce9e532efb44af55781c8b0697f0a"><td class="memItemLeft" align="right" valign="top">const long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="shaker__sort__measurement_8cpp.html#aaa2ce9e532efb44af55781c8b0697f0a">STREAM_SIZE_LIMIT</a> = std::numeric_limits&lt;std::streamsize&gt;::max()</td></tr>
+<tr class="separator:aaa2ce9e532efb44af55781c8b0697f0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac929e1d13c2bbb62d3a18709a4e2b75c"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="shaker__sort__measurement_8cpp.html#ac929e1d13c2bbb62d3a18709a4e2b75c">THOUDSAND_SEPARATOR</a> = &quot;,&quot;</td></tr>
 <tr class="separator:ac929e1d13c2bbb62d3a18709a4e2b75c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -128,8 +132,33 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ab1a72cf322831e5a428b09c43fa3014d" name="ab1a72cf322831e5a428b09c43fa3014d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1a72cf322831e5a428b09c43fa3014d">&#9670;&nbsp;</a></span>initiate()</h2>
+<a id="a4b5f5b22cb15c682cd27ff4d53cd7da1" name="a4b5f5b22cb15c682cd27ff4d53cd7da1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b5f5b22cb15c682cd27ff4d53cd7da1">&#9670;&nbsp;</a></span>get_user_input_as_number()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int get_user_input_as_number </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Parse users' input from the Console, and check the data before return it as a integer value.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">N/A</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An integer that the user inputs </dd></dl>
+
+</div>
+</div>
+<a id="acec1eb591535e7c1fe5006331a74cf45" name="acec1eb591535e7c1fe5006331a74cf45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acec1eb591535e7c1fe5006331a74cf45">&#9670;&nbsp;</a></span>initiate()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -137,7 +166,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">int * initiate </td>
           <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramtype">const unsigned int&#160;</td>
           <td class="paramname"><em>size</em></td><td>)</td>
           <td></td>
         </tr>
@@ -153,8 +182,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a72c5b3abbf62c4dd68c2fec01fe73a61" name="a72c5b3abbf62c4dd68c2fec01fe73a61"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a72c5b3abbf62c4dd68c2fec01fe73a61">&#9670;&nbsp;</a></span>measure_shaker_sort()</h2>
+<a id="ad1091e34d7f1d6b8d3a99c408e6bc0e1" name="ad1091e34d7f1d6b8d3a99c408e6bc0e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1091e34d7f1d6b8d3a99c408e6bc0e1">&#9670;&nbsp;</a></span>measure_shaker_sort()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -168,7 +197,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramtype">const unsigned int&#160;</td>
           <td class="paramname"><em>size</em>&#160;</td>
         </tr>
         <tr>
@@ -204,7 +233,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Prompt users for the array size, then initiate array data, finally measure the Shaker sort's execution time and print result to the console.</p>
+<p >Prompt users for inputing the array size, then initiate array data. </p>
+<p >Finally measure the Shaker sort's execution time and print result to the console.</p>
 <p >It will continues the above process until users choose the option that exits the application.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -259,6 +289,21 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="aaa2ce9e532efb44af55781c8b0697f0a" name="aaa2ce9e532efb44af55781c8b0697f0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa2ce9e532efb44af55781c8b0697f0a">&#9670;&nbsp;</a></span>STREAM_SIZE_LIMIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const long STREAM_SIZE_LIMIT = std::numeric_limits&lt;std::streamsize&gt;::max()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Declare the stream size limit </p>
+
+</div>
+</div>
 <a id="ac929e1d13c2bbb62d3a18709a4e2b75c" name="ac929e1d13c2bbb62d3a18709a4e2b75c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac929e1d13c2bbb62d3a18709a4e2b75c">&#9670;&nbsp;</a></span>THOUDSAND_SEPARATOR</h2>
 
