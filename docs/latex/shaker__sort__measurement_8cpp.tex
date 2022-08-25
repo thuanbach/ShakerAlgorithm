@@ -1,0 +1,160 @@
+\hypertarget{shaker__sort__measurement_8cpp}{}\doxysection{src/shaker\+\_\+sort\+\_\+measurement.cpp File Reference}
+\label{shaker__sort__measurement_8cpp}\index{src/shaker\_sort\_measurement.cpp@{src/shaker\_sort\_measurement.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include \char`\"{}shaker\+\_\+sort.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int $\ast$ \mbox{\hyperlink{shaker__sort__measurement_8cpp_acec1eb591535e7c1fe5006331a74cf45}{initiate}} (const unsigned int size)
+\item 
+int \mbox{\hyperlink{shaker__sort__measurement_8cpp_ad1091e34d7f1d6b8d3a99c408e6bc0e1}{measure\+\_\+shaker\+\_\+sort}} (int arr\mbox{[}$\,$\mbox{]}, const unsigned int size)
+\item 
+string \mbox{\hyperlink{shaker__sort__measurement_8cpp_a90d650cb733255585c7bda6cbb577641}{format\+\_\+number}} (unsigned int n)
+\item 
+void \mbox{\hyperlink{shaker__sort__measurement_8cpp_a596e823ee789329a38e6f6d61accf5a2}{print\+\_\+exectution\+\_\+time\+\_\+to\+\_\+console}} (unsigned int ascending\+\_\+time, unsigned int descending\+\_\+time, unsigned int array\+\_\+size)
+\item 
+int \mbox{\hyperlink{shaker__sort__measurement_8cpp_a4b5f5b22cb15c682cd27ff4d53cd7da1}{get\+\_\+user\+\_\+input\+\_\+as\+\_\+number}} ()
+\item 
+void \mbox{\hyperlink{shaker__sort__measurement_8cpp_a751fdffec74252a78dd20b76325eda09}{measure\+\_\+shaker\+\_\+sort\+\_\+efficiency}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const long \mbox{\hyperlink{shaker__sort__measurement_8cpp_aaa2ce9e532efb44af55781c8b0697f0a}{STREAM\+\_\+\+SIZE\+\_\+\+LIMIT}} = std\+::numeric\+\_\+limits$<$std\+::streamsize$>$\+::max()
+\item 
+const string \mbox{\hyperlink{shaker__sort__measurement_8cpp_ac929e1d13c2bbb62d3a18709a4e2b75c}{THOUDSAND\+\_\+\+SEPARATOR}} = \char`\"{},\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This module is used to support user interaction in selecting sizes of arrays to measure the Shaker sorts\textquotesingle{} efficiency.
+
+\begin{DoxyAuthor}{Author}
+Thuan Bach 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+November 3, 2021 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{shaker__sort__measurement_8cpp_a90d650cb733255585c7bda6cbb577641}\label{shaker__sort__measurement_8cpp_a90d650cb733255585c7bda6cbb577641}} 
+\index{shaker\_sort\_measurement.cpp@{shaker\_sort\_measurement.cpp}!format\_number@{format\_number}}
+\index{format\_number@{format\_number}!shaker\_sort\_measurement.cpp@{shaker\_sort\_measurement.cpp}}
+\doxysubsubsection{\texorpdfstring{format\_number()}{format\_number()}}
+{\footnotesize\ttfamily string format\+\_\+number (\begin{DoxyParamCaption}\item[{unsigned int}]{n }\end{DoxyParamCaption})}
+
+Format a number with a thousand separator.
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & An unsigned integer need to be formated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string presents the number with a thousand separator. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{shaker__sort__measurement_8cpp_a4b5f5b22cb15c682cd27ff4d53cd7da1}\label{shaker__sort__measurement_8cpp_a4b5f5b22cb15c682cd27ff4d53cd7da1}} 
+\index{shaker\_sort\_measurement.cpp@{shaker\_sort\_measurement.cpp}!get\_user\_input\_as\_number@{get\_user\_input\_as\_number}}
+\index{get\_user\_input\_as\_number@{get\_user\_input\_as\_number}!shaker\_sort\_measurement.cpp@{shaker\_sort\_measurement.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_user\_input\_as\_number()}{get\_user\_input\_as\_number()}}
+{\footnotesize\ttfamily int get\+\_\+user\+\_\+input\+\_\+as\+\_\+number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Parse users\textquotesingle{} input from the Console, and check the data before return it as a integer value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em N/A} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An integer that the user inputs 
+\end{DoxyReturn}
+\mbox{\Hypertarget{shaker__sort__measurement_8cpp_acec1eb591535e7c1fe5006331a74cf45}\label{shaker__sort__measurement_8cpp_acec1eb591535e7c1fe5006331a74cf45}} 
+\index{shaker\_sort\_measurement.cpp@{shaker\_sort\_measurement.cpp}!initiate@{initiate}}
+\index{initiate@{initiate}!shaker\_sort\_measurement.cpp@{shaker\_sort\_measurement.cpp}}
+\doxysubsubsection{\texorpdfstring{initiate()}{initiate()}}
+{\footnotesize\ttfamily int $\ast$ initiate (\begin{DoxyParamCaption}\item[{const unsigned int}]{size }\end{DoxyParamCaption})}
+
+Initiate an array with random values. 
+\begin{DoxyParams}{Parameters}
+{\em size} & The size of the array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The array with the size provided and items of value initiated by the rand() method from algorithm library. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{shaker__sort__measurement_8cpp_ad1091e34d7f1d6b8d3a99c408e6bc0e1}\label{shaker__sort__measurement_8cpp_ad1091e34d7f1d6b8d3a99c408e6bc0e1}} 
+\index{shaker\_sort\_measurement.cpp@{shaker\_sort\_measurement.cpp}!measure\_shaker\_sort@{measure\_shaker\_sort}}
+\index{measure\_shaker\_sort@{measure\_shaker\_sort}!shaker\_sort\_measurement.cpp@{shaker\_sort\_measurement.cpp}}
+\doxysubsubsection{\texorpdfstring{measure\_shaker\_sort()}{measure\_shaker\_sort()}}
+{\footnotesize\ttfamily int measure\+\_\+shaker\+\_\+sort (\begin{DoxyParamCaption}\item[{int}]{arr\mbox{[}$\,$\mbox{]},  }\item[{const unsigned int}]{size }\end{DoxyParamCaption})}
+
+Measure shaker sort\textquotesingle{}s execution time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & The array needs to be sorted. \\
+\hline
+{\em size} & The size of the array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The shaker sort\textquotesingle{}s execution time in nanosecond. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{shaker__sort__measurement_8cpp_a751fdffec74252a78dd20b76325eda09}\label{shaker__sort__measurement_8cpp_a751fdffec74252a78dd20b76325eda09}} 
+\index{shaker\_sort\_measurement.cpp@{shaker\_sort\_measurement.cpp}!measure\_shaker\_sort\_efficiency@{measure\_shaker\_sort\_efficiency}}
+\index{measure\_shaker\_sort\_efficiency@{measure\_shaker\_sort\_efficiency}!shaker\_sort\_measurement.cpp@{shaker\_sort\_measurement.cpp}}
+\doxysubsubsection{\texorpdfstring{measure\_shaker\_sort\_efficiency()}{measure\_shaker\_sort\_efficiency()}}
+{\footnotesize\ttfamily void measure\+\_\+shaker\+\_\+sort\+\_\+efficiency (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Prompt users for inputing the array size, then initiate array data. 
+
+Finally measure the Shaker sort\textquotesingle{}s execution time and print result to the console.
+
+It will continues the above process until users choose the option that exits the application.
+
+
+\begin{DoxyParams}{Parameters}
+{\em N/A} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N/A 
+\end{DoxyReturn}
+\mbox{\Hypertarget{shaker__sort__measurement_8cpp_a596e823ee789329a38e6f6d61accf5a2}\label{shaker__sort__measurement_8cpp_a596e823ee789329a38e6f6d61accf5a2}} 
+\index{shaker\_sort\_measurement.cpp@{shaker\_sort\_measurement.cpp}!print\_exectution\_time\_to\_console@{print\_exectution\_time\_to\_console}}
+\index{print\_exectution\_time\_to\_console@{print\_exectution\_time\_to\_console}!shaker\_sort\_measurement.cpp@{shaker\_sort\_measurement.cpp}}
+\doxysubsubsection{\texorpdfstring{print\_exectution\_time\_to\_console()}{print\_exectution\_time\_to\_console()}}
+{\footnotesize\ttfamily void print\+\_\+exectution\+\_\+time\+\_\+to\+\_\+console (\begin{DoxyParamCaption}\item[{unsigned int}]{ascending\+\_\+time,  }\item[{unsigned int}]{descending\+\_\+time,  }\item[{unsigned int}]{array\+\_\+size }\end{DoxyParamCaption})}
+
+Print the Shaker sort\textquotesingle{}s execution times to console in the table format. 
+\begin{DoxyParams}{Parameters}
+{\em ascending\+\_\+time} & The shaker sort\textquotesingle{}s execution time for the ascending array. \\
+\hline
+{\em descending\+\_\+time} & The shaker sort\textquotesingle{}s execution item for the descending array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N/A 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{shaker__sort__measurement_8cpp_aaa2ce9e532efb44af55781c8b0697f0a}\label{shaker__sort__measurement_8cpp_aaa2ce9e532efb44af55781c8b0697f0a}} 
+\index{shaker\_sort\_measurement.cpp@{shaker\_sort\_measurement.cpp}!STREAM\_SIZE\_LIMIT@{STREAM\_SIZE\_LIMIT}}
+\index{STREAM\_SIZE\_LIMIT@{STREAM\_SIZE\_LIMIT}!shaker\_sort\_measurement.cpp@{shaker\_sort\_measurement.cpp}}
+\doxysubsubsection{\texorpdfstring{STREAM\_SIZE\_LIMIT}{STREAM\_SIZE\_LIMIT}}
+{\footnotesize\ttfamily const long STREAM\+\_\+\+SIZE\+\_\+\+LIMIT = std\+::numeric\+\_\+limits$<$std\+::streamsize$>$\+::max()}
+
+Declare the stream size limit \mbox{\Hypertarget{shaker__sort__measurement_8cpp_ac929e1d13c2bbb62d3a18709a4e2b75c}\label{shaker__sort__measurement_8cpp_ac929e1d13c2bbb62d3a18709a4e2b75c}} 
+\index{shaker\_sort\_measurement.cpp@{shaker\_sort\_measurement.cpp}!THOUDSAND\_SEPARATOR@{THOUDSAND\_SEPARATOR}}
+\index{THOUDSAND\_SEPARATOR@{THOUDSAND\_SEPARATOR}!shaker\_sort\_measurement.cpp@{shaker\_sort\_measurement.cpp}}
+\doxysubsubsection{\texorpdfstring{THOUDSAND\_SEPARATOR}{THOUDSAND\_SEPARATOR}}
+{\footnotesize\ttfamily const string THOUDSAND\+\_\+\+SEPARATOR = \char`\"{},\char`\"{}}
+
+Declare a thousand separator 

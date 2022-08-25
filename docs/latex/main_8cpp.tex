@@ -1,0 +1,69 @@
+\hypertarget{main_8cpp}{}\doxysection{src/main.cpp File Reference}
+\label{main_8cpp}\index{src/main.cpp@{src/main.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}shaker\+\_\+sort\+\_\+measurement.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}shaker\+\_\+sort\+\_\+test.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const unsigned int \mbox{\hyperlink{main_8cpp_a021b8be5a15e52772373c45a2037f25e}{TEST\+\_\+\+MODE}} = 1
+\item 
+const unsigned int \mbox{\hyperlink{main_8cpp_a8f8562575e74f221d1a54ad38763d72b}{APP\+\_\+\+MODE}} = 2
+\item 
+const unsigned int \mbox{\hyperlink{main_8cpp_a8e99b9b0f45cb438b370462cdcf45e6e}{RUNNING\+\_\+\+MODE}} = \mbox{\hyperlink{main_8cpp_a8f8562575e74f221d1a54ad38763d72b}{APP\+\_\+\+MODE}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains the main function where the main application gets started.
+
+\begin{DoxyAuthor}{Author}
+Thuan Bach 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+November 3, 2021 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The main function where the Shaker Sort Measurement starts execution. 
+\begin{DoxyParams}{Parameters}
+{\em N/A} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Always 0 if the application terminated correctly. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{main_8cpp_a8f8562575e74f221d1a54ad38763d72b}\label{main_8cpp_a8f8562575e74f221d1a54ad38763d72b}} 
+\index{main.cpp@{main.cpp}!APP\_MODE@{APP\_MODE}}
+\index{APP\_MODE@{APP\_MODE}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{APP\_MODE}{APP\_MODE}}
+{\footnotesize\ttfamily const unsigned int APP\+\_\+\+MODE = 2}
+
+Define an application mode used to run the Shaker sort\textquotesingle{} measurement \mbox{\Hypertarget{main_8cpp_a8e99b9b0f45cb438b370462cdcf45e6e}\label{main_8cpp_a8e99b9b0f45cb438b370462cdcf45e6e}} 
+\index{main.cpp@{main.cpp}!RUNNING\_MODE@{RUNNING\_MODE}}
+\index{RUNNING\_MODE@{RUNNING\_MODE}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{RUNNING\_MODE}{RUNNING\_MODE}}
+{\footnotesize\ttfamily const unsigned int RUNNING\+\_\+\+MODE = \mbox{\hyperlink{main_8cpp_a8f8562575e74f221d1a54ad38763d72b}{APP\+\_\+\+MODE}}}
+
+Define a running mode for the application. \mbox{\Hypertarget{main_8cpp_a021b8be5a15e52772373c45a2037f25e}\label{main_8cpp_a021b8be5a15e52772373c45a2037f25e}} 
+\index{main.cpp@{main.cpp}!TEST\_MODE@{TEST\_MODE}}
+\index{TEST\_MODE@{TEST\_MODE}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_MODE}{TEST\_MODE}}
+{\footnotesize\ttfamily const unsigned int TEST\+\_\+\+MODE = 1}
+
+Define a test mode used to run unit tests 
